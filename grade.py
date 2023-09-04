@@ -29,10 +29,10 @@ class Grade:
         :param date:  Datum der Prüfung
         '''
         if value >= 1.0 and value <= 6.0:
-            self.__value = value
+            self.value = value
         else:
-            self.__value = -1.0 # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
-        self.__date  = date     # und da wird einfach alles entgegengenommen
+            self.value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
+        self.date = date       # und da wird einfach alles entgegengenommen
 
 
 
