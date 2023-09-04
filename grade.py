@@ -33,7 +33,7 @@ class Grade:
         else:
             self.value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
         self.date = date       # und da wird einfach alles entgegengenommen
-
+        print('init done')
 
 
 # Test der Klasse mit eigener main-Methode

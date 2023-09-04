@@ -1,4 +1,4 @@
-class Grade:
+class Grade1:
     '''
     Die Klasse Grade beschreibt eine Note mit einem Wert (value) und dem Datum (date) an dem die
     Note realisiert wurde.
@@ -42,15 +42,16 @@ class Grade:
         :return: Datum
         '''
         return self.__date
+    print('init done')
 
 
 # Test der Klasse mit eigener main-Methode
 if __name__ == '__main__':
     # ein Notenobjekt erzeugen mit korrekten Notenwert
-    grade = Grade(4.0, '3.2.22')
+    grade = Grade1(4.0, '3.2.22')
     print(f'Notenwert:  {grade.value}')
     print(f'Datum:      {grade.date}')
     # ein Notenobjekt erzeugen mit ungültigem Notenwert --> -1 wird angezeigt
-    grade = Grade(6.5, '1.1.99')
+    grade = Grade1(6.5, '1.1.99')
     print(f'\nNotenwert: {grade.value}')
     print(f'Datum:       {grade.date}')
