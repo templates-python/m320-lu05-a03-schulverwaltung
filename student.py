@@ -1,5 +1,5 @@
 from class_report import ClassReport
-from grade1 import Grade
+from grade import Grade
 from subject import Subject
 
 

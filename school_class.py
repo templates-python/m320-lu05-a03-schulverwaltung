@@ -1,7 +1,7 @@
 from student import Student
 from class_report import ClassReport
 from subject import Subject
-from grade1 import Grade
+from grade import Grade
 
 
 class SchoolClass:

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 
-@dataclass(init=False)
+@dataclass
 class Grade:
     """
     Die Klasse Grade beschreibt eine Note mit einem Wert (value) und dem Datum (date) an dem die
@@ -28,7 +28,7 @@ class Grade:
         :param value: Notenwert der Prüfung
         :param date:  Datum der Prüfung
         """
-        if 1.0 <= value <= 6.0:
+        if .0 <= value <= 6.0:
             self.value = value
         else:
             self.value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
@@ -38,10 +38,6 @@ class Grade:
     @property
     def value(self):
         return self._value
-
-    @value.setter
-    def value(self, value):
-        self._value = value
 
     @property
     def date(self):
