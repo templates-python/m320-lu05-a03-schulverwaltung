@@ -1,9 +1,9 @@
-
 from dataclasses import dataclass
+
 
 @dataclass(init=False)
 class Grade:
-    '''
+    """
     Die Klasse Grade beschreibt eine Note mit einem Wert (value) und dem Datum (date) an dem die
     Note realisiert wurde.
     Das Objekt wird bei der Erzeugung mit den entsprechenden Werten initialisiert und kann dann nur
@@ -17,22 +17,22 @@ class Grade:
     Version: 1.0
     Date:    14.9.2022
     Changes: none
-    '''
+    """
 
     value: float = -1.0
     date: str = '1.1.1111'
 
     def __init__(self, value, date):
-        '''
+        """
         Erstellt ein Notenobjekt mit dem Notenwert und dem Datum der Notengebung
         :param value: Notenwert der Prüfung
         :param date:  Datum der Prüfung
-        '''
-        if value >= 1.0 and value <= 6.0:
+        """
+        if 1.0 <= value <= 6.0:
             self.value = value
         else:
             self.value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
-        self.date = date       # und da wird einfach alles entgegengenommen
+        self.date = date  # und da wird einfach alles entgegengenommen
         print('init done')
 
     @property
@@ -50,6 +50,7 @@ class Grade:
     @date.setter
     def date(self, value):
         self._date = value
+
 
 # Test der Klasse mit eigener main-Methode
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
 import pytest
 from subject import Subject
 from grade import Grade
+
+
 class TestSubject:
 
     @pytest.fixture
@@ -10,7 +12,6 @@ class TestSubject:
     def test_initialisation(self, subject):
         assert subject.name == 'Mathe'
         assert subject.size == 0
-
 
     def test_grade_added_size(self, subject):
         subject.add_grade(Grade(3.0, '1.2.33'))
@@ -39,7 +40,6 @@ class TestSubject:
         assert subject.get_value(2) == 4.0
 
     def test_average(self, subject):
-
         assert subject.get_average() == 4.0
 
     def test_max_grades(self, subject):
@@ -49,5 +49,3 @@ class TestSubject:
         subject.add_grade(Grade(1.0, '1.2.44'))
         subject.add_grade(Grade(2.0, '1.2.55'))
         assert subject.size == 4
-
-

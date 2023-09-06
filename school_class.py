@@ -5,7 +5,7 @@ from grade1 import Grade
 
 
 class SchoolClass:
-    '''
+    """
     Beschreibt eine Schulklasse mit der Klassenbezeichnung.
     Die Lernenden werden in einer Liste von Student-Objekten gehalten.
 
@@ -27,74 +27,72 @@ class SchoolClass:
     Version: 1.0
     Date:    14.9.2022
     Changes: none
-    '''
+    """
 
     def __init__(self, designation):
-        '''
+        """
         Erzeugt eine Klasse mit deren Bezeichnung und stellt eine leere Liste
         für die Lernenden bereit.
         :param designation: Klassenbezeichnung
-        '''
+        """
         self.__designation = designation
-        self.__students    = []
+        self.__students = []
 
     @property
     def designation(self):
-        '''
+        """
         Liefert die Klassenbezeichnung
         :return: Klassenbezeichnung
-        '''
+        """
         return self.__designation
 
     @property
     def student(self, index):
-        '''
+        """
         Liefert das durch index markierte Element aus der Liste.
         :param index: Element-Nummer in der Liste
         :return: Elemente an der Stelle index
-        '''
+        """
         return self.__students[index]
 
     def add_student(self, student):
-        '''
+        """
         Weist der Klasse einen Studenten zu. Die lasse meldet sich dann umgehend beim Studneten
         mit der eigenen Referenz.
         Eine Klasse darf max. 20 Studierende haben.
         :param student: Studenten-Objekt
         :return:
-        '''
+        """
         if self.size < 20:
             self.__students.append(student)
             print(student)
-            #student.school_class(self)
+            # student.school_class(self)
         else:
             print("Warnung: Student kann nicht zugefügt werden, da die Klasse voll ist")  # natürlich eine Exception
 
-
     @property
     def size(self):
-        '''
+        """
         Liefert die Anzahl Elemente in der Liste der Studenten
         :return: Anzahl Elemente
-        '''
+        """
         return len(self.__students)
 
     def print_student_list(self):
-        '''
+        """
         Gibt eine Namensliste der Studenten aus
-        '''
+        """
         for student in self.__students:
             print(student.name)
 
-
     def print_student_report(self, name):
-        '''
+        """
         Gibt das Zeugnis einer Studentin aus.
         Das korrekte Objekt wird anhand des Namens bestimmt.
         Bei einem falschen Namen erfolgt keine Ausgabe.
         :param name: Name des Studenten
         :return:
-        '''
+        """
         print("----")
         for student in self.__students:
             if student.name == name:

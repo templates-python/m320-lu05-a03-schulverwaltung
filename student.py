@@ -2,9 +2,10 @@ from class_report import ClassReport
 from grade1 import Grade
 from subject import Subject
 
+
 #
 class Student:
-    '''
+    """
     Die Klasse beschreibt eine Studentin mit Name als alleiniges Merkmal.
 
     Als Schnittstelle bietet die Klasse die Methoden
@@ -23,15 +24,15 @@ class Student:
     Version: 1.0
     Date:    14.9.2022
     Changes: none
-    '''
+    """
 
     def __init__(self, name, report):
-        '''
+        """
         Erzeugt ein Student-Objekt mit Name und einer Referenz zum Zeugnis.
         :param report: Referenz zum Zeugnis
-        '''
-        self.__name         = name
-        self.__report       = report
+        """
+        self.__name = name
+        self.__report = report
         self.__school_class = None  # diese Referenz folgt zeitlich später
         # hier sofort die zweiseitige Beziehung knüpfen.
         report.set_student(self)
@@ -40,36 +41,35 @@ class Student:
 
     @property
     def name(self):
-        '''
+        """
         Liefert den Namen des Studenten
         :return: Name des Studenten
-        '''
+        """
         return self.__name
 
     @property
     def school_class(self):
-        '''
+        """
         Liefert die Referenz der Klasse
         :return: Referenz der Klasse
-        '''
+        """
         return self.__school_class
 
     @school_class.setter
     def school_class(self, school_class):
-        '''
+        """
         Setzt die Referenz zur Klasse
         :param school_class: Referenz der Klasse
-        '''
+        """
         self.__school_class = school_class
 
     @property
     def report(self):
-        '''
+        """
         Liefert die Referenz zum Zeugnis
         :return: Referenz zum Zeugnis
-        '''
+        """
         return self.__report
-
 
     def print_report(self):
         print(self.report.to_string())
