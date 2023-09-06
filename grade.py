@@ -1,7 +1,7 @@
 
 from dataclasses import dataclass
 
-@dataclass(init=True)
+@dataclass(init=False)
 class Grade:
     '''
     Die Klasse Grade beschreibt eine Note mit einem Wert (value) und dem Datum (date) an dem die
@@ -22,7 +22,7 @@ class Grade:
     value: float = -1.0
     date: str = '1.1.1111'
 
-    def ___init__(self, value, date):
+    def __init__(self, value, date):
         '''
         Erstellt ein Notenobjekt mit dem Notenwert und dem Datum der Notengebung
         :param value: Notenwert der Prüfung
@@ -35,6 +35,21 @@ class Grade:
         self.date = date       # und da wird einfach alles entgegengenommen
         print('init done')
 
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        self._value = value
+
+    @property
+    def date(self):
+        return self._date
+
+    @date.setter
+    def date(self, value):
+        self._date = value
 
 # Test der Klasse mit eigener main-Methode
 if __name__ == '__main__':
