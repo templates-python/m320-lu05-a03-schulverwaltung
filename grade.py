@@ -10,7 +10,7 @@ class Grade:
     gelesen werden.
 
     Attribute:
-    - value: ein Notenwert von 1...6 (der Wert muss in der Zuweisung gesichert werden)
+    - value: ein Notenwert von 1 ... 6 (der Wert muss in der Zuweisung gesichert werden)
     - date:  eine Zeichenkette, die ungeprüft das Datum der Note repräsentiert.
 
     Author:  René Probst
@@ -29,9 +29,9 @@ class Grade:
         :param date:  Datum der Prüfung
         """
         if .0 <= value <= 6.0:
-            self.value = value
+            self._value = value
         else:
-            self.value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
+            self._value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
         self.date = date  # und da wird einfach alles entgegengenommen
         print('init done')
 

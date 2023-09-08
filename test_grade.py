@@ -1,5 +1,5 @@
-import pytest
 from grade import Grade
+
 
 class TestGrade:
 

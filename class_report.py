@@ -1,8 +1,9 @@
-from subject import Subject
 from grade import Grade
+from subject import Subject
+
 
 class ClassReport:
-    '''
+    """
     Die Klasse stellt das Zeugnis einer Studentin dar.
     Im Zeugnis werden 3 Fächer aufgeführt (und genau 3 Fächer). Das lässt sich aus dem
     Klassendiagramm ableiten.
@@ -17,7 +18,7 @@ class ClassReport:
     Über die Methode to_string() kann das Zeugnis in einer Stingrepräsentation abgerufen werden.
     Sie umfasst den Namen des Studenten (Student) sowie die 3 Fächer mit dem Notenschnitt
 
-    Die Methode print_details() gibt zu einem Fach alle Noten mit deren Datum sowie den Mittwelwert aus.
+    Die Methode print_details() gibt zu einem Fach alle Noten mit deren Datum sowie den Mittelwert aus.
     Als Parameter wird der Name des Fachs geliefert. Anhand dieses Namens wird dann in der Liste das
     korrekte Objekt ausfindig gemacht.
 
@@ -25,84 +26,77 @@ class ClassReport:
     - subjects[]: die Referenz zu den 3 Fächer
     - student: die Referenz zum Student-Objekt
 
-    Author:  René Probst
-    Version: 1.0
-    Date:    14.9.2022
-    Changes: none
-    '''
+    """
 
     def __init__(self):
-        '''
+        """
         Erstellt ein Zeugnis mit einer leeren Fächerliste.
-        '''
-        self.__subjects = []
-        self.__student = None # unbedingt auf None setzen, damit ein Wert gesetzt ist.
-                              # Siehe dazu den Code in der Methode to_string!
-
+        """
+        self._subjects = []
+        self._student = None  # unbedingt auf None setzen, damit ein Wert gesetzt ist.
+        # Siehe dazu den Code in der Methode to_string!
 
     # und hier die oben beschriebenen Methoden gemäss Klassendiagramm einfügen
     @property
     def size(self):  # findet sich nicht im Klassendiagramm, macht aber Sinn
-        '''
+        """
         Liefert die Anzahl der Fächer
         :return: Anzahl Fächer
-        '''
-        return len(self.__subjects)
+        """
+        return len(self._subjects)
 
     def set_student(self, student):
-        '''
+        """
         Setzt die Referenz zum Studenten
         :param student: Referenz zu Student
-        '''
-        self.__student = student
-
+        """
+        self._student = student
 
     def get_subject(self, index):
-        '''
+        """
         Liefert das durch index markierte Fach
         :param index: Nummer des Fachs
         :return: Referenz zu Fach
-        '''
-        return self.__subjects[index]
-
+        """
+        return self._subjects[index]
 
     def add_subject(self, subject):
-        '''
+        """
         Setzt ein Fach
         :param subject: Referenz zum Fach
-        '''
+        """
         if self.size < 3:
-           self.__subjects.append(subject)
-
+            self._subjects.append(subject)
 
     def to_string(self):
-        '''
-        Liefert eine String-Repräsentation des Zeugnis mit
+        """
+        Liefert eine String-Repräsentation des Zeugnises mit
         - Namen des Studenten
         - den Fächern
         - und dem jeweiligen Notenschnitt
         :return: Notenblatt als Stringrepräsentation
-        '''
+        """
         view = "Zeugnis für: "
-        if self.__student != None:
+        if self._student is not None:
             # Nur wenn eine Referenz zu einem Studenten-Objekt existiert,
             # kann der Name abgefragt werden.
-            view += self.__student.name
+            view += self._student.name
         # alle Fächer mit dem Notenschnitt auflisten
-        for subject in self.__subjects:
+        for subject in self._subjects:
             view += "\n\t" + subject.name + ":  " + str(subject.get_average())
         return view
 
     def print_details(self):
-        '''
+        """
         gibt alle Noten und den Schnitt der Fächer am Stdout aus.
-        '''
-        for subject in self.__subjects:
-            #DEBUG
+        """
+        for subject in self._subjects:
+            # DEBUG
             print("\tFach: " + subject.name + " mit " + str(subject.size) + " Noten")
-            #DEBUG
-            for count  in range(subject.size):
-               print("\t\t" + str(count+1) + ": " + str(subject.get_value(count)) + "   " + str(subject.get_date(count)) )
+            # DEBUG
+            for count in range(subject.size):
+                print("\t\t" + str(count + 1) + ": " + str(subject.get_value(count)) + "   " + str(
+                    subject.get_date(count)))
             print("\tSchnitt: " + str(subject.get_average()) + "\n")
 
 

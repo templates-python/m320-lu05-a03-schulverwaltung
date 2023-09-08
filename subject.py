@@ -1,8 +1,6 @@
 from grade import Grade
 
 
-#
-
 class Subject:
     """
     Die Klasse repräsentiert ein Schulfach (school subject) mit 2 bis 4 Noten.
@@ -19,11 +17,6 @@ class Subject:
     Attribute:
     - name: Name des Fachs
     - grades[]: eine Liste mit 2 bis 4 Noten-Objekten
-
-    Author:  René Probst
-    Version: 1.0
-    Date:    14.9.2022
-    Changes: none
     """
 
     def __init__(self, name):
@@ -32,8 +25,8 @@ class Subject:
         Es könne max. 4 Noten zugewiesen werden.
         :param name: Name des Fachs
         """
-        self.__name = name
-        self.__grades = []
+        self._name = name
+        self._grades = []
 
     # und hier die oben beschriebenen Methoden gemäss Klassendiagramm einfügen
     @property
@@ -42,7 +35,7 @@ class Subject:
         Liefert den Namen des Fachs
         :return: Name des Fachs
         """
-        return self.__name
+        return self._name
 
     def add_grade(self, grade):
         """
@@ -51,7 +44,7 @@ class Subject:
         :param grade: Noten-Objekt
         """
         if self.size < 4:
-            self.__grades.append(grade)
+            self._grades.append(grade)
         # Und sonst passiert nichts. Das Notenobjekt wandert ins Nirvana
 
     @property
@@ -60,7 +53,7 @@ class Subject:
         Liefert die Anzahl der Noten-Objekte in der Liste
         :return: Anzahl  Objekte
         """
-        return len(self.__grades)
+        return len(self._grades)
 
     def get_value(self, index):
         """
@@ -69,7 +62,7 @@ class Subject:
         :return: Notenwert des durch index markierten Objekts oder 0 bei falschem Index
         """
         if index < self.size:
-            grade = self.__grades[index]
+            grade = self._grades[index]
             return grade.value
         else:
             return 0  # Fehlercode (auch hier wird in einer Applikation dann eine Exception erzeugt)
@@ -81,7 +74,7 @@ class Subject:
         :return: datum des durch index markierten Objekts oder nichts bei falschem Index
         """
         if index < self.size:
-            grade = self.__grades[index]
+            grade = self._grades[index]
             return grade.date
 
     def get_average(self):
@@ -93,8 +86,8 @@ class Subject:
         :return: Notenschnitt
         """
         sum = 0.0
-        for zahl in range(self.size):
-            sum += self.get_value(zahl)
+        for number in range(self.size):
+            sum += self.get_value(number)
         return sum / self.size
 
 

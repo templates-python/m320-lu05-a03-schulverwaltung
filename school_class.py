@@ -1,7 +1,7 @@
-from student import Student
 from class_report import ClassReport
-from subject import Subject
 from grade import Grade
+from student import Student
+from subject import Subject
 
 
 class SchoolClass:
@@ -22,11 +22,6 @@ class SchoolClass:
     Attribute:
     - designation: Name der Klasse
     - students[]: Liste aller Student-Objekte
-
-    Author:  René Probst
-    Version: 1.0
-    Date:    14.9.2022
-    Changes: none
     """
 
     def __init__(self, designation):
@@ -35,8 +30,8 @@ class SchoolClass:
         für die Lernenden bereit.
         :param designation: Klassenbezeichnung
         """
-        self.__designation = designation
-        self.__students = []
+        self._designation = designation
+        self._students = []
 
     @property
     def designation(self):
@@ -44,7 +39,7 @@ class SchoolClass:
         Liefert die Klassenbezeichnung
         :return: Klassenbezeichnung
         """
-        return self.__designation
+        return self._designation
 
     @property
     def student(self, index):
@@ -53,18 +48,18 @@ class SchoolClass:
         :param index: Element-Nummer in der Liste
         :return: Elemente an der Stelle index
         """
-        return self.__students[index]
+        return self._students[index]
 
     def add_student(self, student):
         """
-        Weist der Klasse einen Studenten zu. Die lasse meldet sich dann umgehend beim Studneten
+        Weist der Klasse einen Studenten zu. Die Klasse meldet sich dann umgehend beim Studenten
         mit der eigenen Referenz.
         Eine Klasse darf max. 20 Studierende haben.
         :param student: Studenten-Objekt
         :return:
         """
         if self.size < 20:
-            self.__students.append(student)
+            self._students.append(student)
             print(student)
             # student.school_class(self)
         else:
@@ -76,13 +71,13 @@ class SchoolClass:
         Liefert die Anzahl Elemente in der Liste der Studenten
         :return: Anzahl Elemente
         """
-        return len(self.__students)
+        return len(self._students)
 
     def print_student_list(self):
         """
         Gibt eine Namensliste der Studenten aus
         """
-        for student in self.__students:
+        for student in self._students:
             print(student.name)
 
     def print_student_report(self, name):
@@ -94,7 +89,7 @@ class SchoolClass:
         :return:
         """
         print("----")
-        for student in self.__students:
+        for student in self._students:
             if student.name == name:
                 student.print_report()
                 break
