@@ -43,9 +43,7 @@ class Grade:
     def date(self):
         return self._date
 
-    @date.setter
-    def date(self, value):
-        self._date = value
+
 
 
 # Test der Klasse mit eigener main-Methode

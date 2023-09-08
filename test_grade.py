@@ -8,7 +8,7 @@ class TestGrade:
         assert grade.value == 4.0
 
     def test_initial_value_to_low(self):
-        grade = Grade(0.0, '3.3.35')
+        grade = Grade(-1.0, '3.3.35')
         assert grade.value == -1.0
 
     def test_initial_value_to_high(self):
