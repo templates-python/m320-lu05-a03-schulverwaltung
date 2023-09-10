@@ -28,12 +28,12 @@ class Grade:
         :param value: Notenwert der Prüfung
         :param date:  Datum der Prüfung
         """
-        if .0 <= value <= 6.0:
+        if 0.0 <= value <= 6.0:
             self._value = value
         else:
             self._value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
         self._date = date  # und da wird einfach alles entgegengenommen
-        print('init done')
+
 
     @property
     def value(self):

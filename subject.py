@@ -85,10 +85,13 @@ class Subject:
         entsprechende Exception geworfen werden. Aber das lassen wir hier bleiben.
         :return: Notenschnitt
         """
-        sum = 0.0
-        for number in range(self.size):
-            sum += self.get_value(number)
-        return sum / self.size
+        if self.size == 0:
+            return 0
+        else:
+            sum = 0.0
+            for number in range(self.size):
+                sum += self.get_value(number)
+            return sum / self.size
 
 
 # Klasse testen mit main
