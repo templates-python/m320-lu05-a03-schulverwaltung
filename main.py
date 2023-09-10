@@ -1,4 +1,4 @@
-from class_report import ClassReport
+from classreport import ClassReport
 from student import Student
 from school_class import SchoolClass
 

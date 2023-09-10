@@ -58,7 +58,10 @@ class ClassReport:
         :param index: Nummer des Fachs
         :return: Referenz zu Fach
         """
-        return self._subjects[index]
+        if index < self.size:
+            return self._subjects[index]
+        else:
+            return None
 
     def add_subject(self, subject):
         """

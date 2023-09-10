@@ -9,25 +9,57 @@ class TestSubject:
     def subject(self):
         return Subject('Mathe')
 
-    """ 
-    Test des Konstruktors und der Methoden get_name und get_size.
+    @pytest.fixture
+    def grade(self):
+        return Grade( 4.0, '1.2.33')
+
     """
-    def test_initialisation(self, subject):
+    Test mit leerem Subject.
+    """
+    def test_empty_subject(self, subject):
         assert subject.name == 'Mathe'
         assert subject.size == 0
 
     """
-    Test der add_grade und der get_size Methoden mit einem Notenwert.
+    Test mit einem Element.
     """
-    def test_single_grade_added_size(self, subject):
+    def test_single_grade_added(self, subject):
         subject.add_grade(Grade(3.0, '1.2.33'))
         assert subject.size == 1
 
     """
-    Test des Index bei get_value und get_date Methoden.
+      Test mit 4 Elementen.
     """
-    def test_grade_index(self, subject):
+    def test_multi_grade_added(self, subject):
         subject.add_grade(Grade(3.0, '1.2.33'))
+        subject.add_grade(Grade(5.0, '1.2.44'))
+        subject.add_grade(Grade(4.0, '1.2.55'))
+        assert subject.size == 3
+
+    """
+        Test mit mehr als 4 Elementen.
+    """
+    def test_max_grades_added(self, subject):
+        subject.add_grade(Grade(3.0, '1.2.33'))
+        subject.add_grade(Grade(5.0, '1.2.44'))
+        subject.add_grade(Grade(4.0, '1.2.55'))
+        subject.add_grade(Grade(1.0, '1.2.44'))
+        subject.add_grade(Grade(2.0, '1.2.55'))
+        assert subject.size == 4
+
+    """
+    Test bei Zugriff mit gültigem Index.
+    """
+    def test_get_grade_valid(self, subject, grade):
+        subject.add_grade(grade)
+        assert subject.get_value(0) == grade.value
+        assert subject.get_date(0) == grade.date
+
+    """
+    Test bei Zugriff mit ungültigem Index
+    """
+    def test_get_grade_invalid(self, subject, grade):
+        subject.add_grade(grade)
         assert subject.get_value(1) == 0
         assert subject.get_date(1) == None
 
@@ -38,15 +70,6 @@ class TestSubject:
         subject.add_grade(Grade(3.0, '1.2.33'))
         assert subject.get_value(0) == 3.0
         assert subject.get_date(0) == '1.2.33'
-
-    """
-    Test der add_grade Methode auf mehrere Noten.
-    """
-    def test_multi_grade_added_size(self, subject):
-        subject.add_grade(Grade(3.0, '1.2.33'))
-        subject.add_grade(Grade(5.0, '1.2.44'))
-        subject.add_grade(Grade(4.0, '1.2.55'))
-        assert subject.size == 3
 
     """
     Test der Inhalte bei mehreren zugefügten Noten.
@@ -62,16 +85,7 @@ class TestSubject:
         assert subject.get_date(1) == '1.2.44'
         assert subject.get_date(2) == '1.2.55'
 
-    """
-    Test auf mehr als 4 zugefügte Notenwerte.
-    """
-    def test_max_grades(self, subject):
-        subject.add_grade(Grade(3.0, '1.2.33'))
-        subject.add_grade(Grade(5.0, '1.2.44'))
-        subject.add_grade(Grade(4.0, '1.2.55'))
-        subject.add_grade(Grade(1.0, '1.2.44'))
-        subject.add_grade(Grade(2.0, '1.2.55'))
-        assert subject.size == 4
+
 
     """
     Test des Mittelwertes bei fehlendem Noteneintrag.
