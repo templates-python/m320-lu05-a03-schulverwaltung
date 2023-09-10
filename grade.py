@@ -20,7 +20,7 @@ class Grade:
     """
 
     value: float = -1.0
-    date: str = '1.1.1111'
+    date: str = 'no date'
 
     def __init__(self, value, date):
         """
@@ -32,7 +32,7 @@ class Grade:
             self._value = value
         else:
             self._value = -1.0  # ungültiger Notenwert (ja, hier würde man eine Exception werfen)
-        self.date = date  # und da wird einfach alles entgegengenommen
+        self._date = date  # und da wird einfach alles entgegengenommen
         print('init done')
 
     @property
