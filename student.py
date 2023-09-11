@@ -21,16 +21,16 @@ class Student:
     - report: Referenz zum Zeugnis
     """
 
-    def __init__(self, name, report):
+    def __init__(self, name, class_report):
         """
         Erzeugt ein Student-Objekt mit Name und einer Referenz zum Zeugnis.
         :param report: Referenz zum Zeugnis
         """
         self._name = name
-        self._report = report
+        self._report = class_report
         self._school_class = None  # diese Referenz folgt zeitlich später
         # hier sofort die zweiseitige Beziehung knüpfen.
-        report.set_student(self)
+        class_report.set_student(self)
 
     # und hier die oben beschriebenen Methoden gemäss Klassendiagramm einfügen
 
