@@ -32,7 +32,7 @@ class Student:
         # hier sofort die zweiseitige Beziehung knüpfen.
 
         print(f'ClassReport Objekt: {class_report}')
-        class_report.set_student('abc')
+        class_report.student('abc')
 
     # und hier die oben beschriebenen Methoden gemäss Klassendiagramm einfügen
 
