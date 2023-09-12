@@ -41,8 +41,8 @@ class SchoolClass:
         """
         return self._designation
 
-    @property
-    def student(self, index):
+
+    def get_student(self, index):
         """
         Liefert das durch index markierte Element aus der Liste.
         :param index: Element-Nummer in der Liste
@@ -60,8 +60,6 @@ class SchoolClass:
         """
         if self.size < 20:
             self._students.append(student)
-            print(student)
-            # student.school_class(self)
         else:
             print("Warnung: Student kann nicht zugefügt werden, da die Klasse voll ist")  # natürlich eine Exception
 
@@ -95,52 +93,3 @@ class SchoolClass:
                 break
 
 
-if __name__ == "__main__":
-    # Am Anfang steht da eine Klasse
-    the_class = SchoolClass("IM993a")
-    #
-    # Dann braucht es mal ein paar leere Zeugnisse und deren Fächer
-    report_max = ClassReport()
-    report_max.add_subject(Subject("Mathe"))
-    report_max.add_subject(Subject("Deutsch"))
-    report_max.add_subject(Subject("Turnen"))
-    #
-    report_pia = ClassReport()
-    report_pia.add_subject(Subject("Mathe"))
-    report_pia.add_subject(Subject("Deutsch"))
-    report_pia.add_subject(Subject("Turnen"))
-    #
-    # Und natürlich Lernende
-    max = Student("Max", report_max)
-    pia = Student("Pia", report_pia)
-    #
-    # Nun immatrikulieren wir die Lernenden
-    the_class.add_student(max)
-    the_class.add_student(pia)
-    # Und dann erstellen wir mal die Klasseliste
-    the_class.print_student_list()
-    #
-    # Jetzt braucht es noch Noten
-    report_max.get_subject(0).add_grade(Grade(4.0, "1.1.11"))
-    report_max.get_subject(0).add_grade(Grade(4.5, "2.2.22"))
-    report_max.get_subject(1).add_grade(Grade(4.0, "3.3.33"))
-    report_max.get_subject(1).add_grade(Grade(6.0, "4.4.44"))
-    report_max.get_subject(1).add_grade(Grade(5.0, "5.5.55"))
-    report_max.get_subject(2).add_grade(Grade(4.5, "6.6.66"))
-    report_max.get_subject(2).add_grade(Grade(5.0, "7.7.77"))
-    report_max.get_subject(2).add_grade(Grade(5.0, "8.8.88"))
-    report_max.get_subject(2).add_grade(Grade(5.5, "9.9.99"))
-    #
-    report_pia.get_subject(0).add_grade(Grade(5.5, "1.1.11"))
-    report_pia.get_subject(0).add_grade(Grade(5.5, "2.2.22"))
-    report_pia.get_subject(1).add_grade(Grade(4.5, "3.3.33"))
-    report_pia.get_subject(1).add_grade(Grade(6.0, "4.4.44"))
-    report_pia.get_subject(1).add_grade(Grade(5.5, "5.5.55"))
-    report_pia.get_subject(2).add_grade(Grade(4.0, "6.6.66"))
-    report_pia.get_subject(2).add_grade(Grade(5.5, "7.7.77"))
-    report_pia.get_subject(2).add_grade(Grade(6.0, "8.8.88"))
-    report_pia.get_subject(2).add_grade(Grade(5.5, "9.9.99"))
-    #
-    the_class.print_student_report("Max")
-    the_class.print_student_report("Pia")
-    the_class.print_student_report("Theo")
