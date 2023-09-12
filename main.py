@@ -9,6 +9,8 @@ def create_subject_liste(actual_report):
     actual_report.add_subject(Subject("Mathe"))
     actual_report.add_subject(Subject("Deutsch"))
     actual_report.add_subject(Subject("Turnen"))
+
+
 def main():
     if __name__ == "__main__":
         # Am Anfang steht da eine Klasse
