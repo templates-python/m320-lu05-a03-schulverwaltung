@@ -1,9 +1,9 @@
 {
   "tests": [
     {
-      "name": "test_initial_value_ok",
+      "name": "test_empty_report",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_initial_value_ok\"",
+      "run": "pytest -v  -k \"test_empty_report\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -11,9 +11,9 @@
       "points": 1
     },
     {
-      "name": "test_initial_value_to_low",
+      "name": "test_single_subject_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_initial_value_to_low\"",
+      "run": "pytest -v  -k \"test_single_subject_added\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -21,9 +21,9 @@
       "points": 1
     },
     {
-      "name": "test_initial_value_to_high",
+      "name": "test_multi_subject_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_initial_value_to_high\"",
+      "run": "pytest -v  -k \"test_multi_subject_added\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -31,9 +31,119 @@
       "points": 1
     },
     {
-      "name": "test_date_set",
+      "name": "test_max_subjects_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_date_set\"",
+      "run": "pytest -v  -k \"test_max_subjects_added\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_get_subject_valid",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_get_subject_valid\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_get_subject_invalid",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_get_subject_invalid\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_grade_initial_value_OK",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_grade_initial_value_OK\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_grade_initial_value_to_low",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_grade_initial_value_to_low\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_grade_initial_value_to_high",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_grade_initial_value_to_high\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_grade_date_set",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_grade_date_set\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_school_class_init",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_school_class_init\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_single_student_added",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_single_student_added\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_multi_student_added",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_multi_student_added\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_max_student_added",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_max_student_added\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_student_list",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_student_list\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -51,9 +161,9 @@
       "points": 1
     },
     {
-      "name": "test_grade_added_size",
+      "name": "test_relationship_to_classreport",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_grade_added_size\"",
+      "run": "pytest -v  -k \"test_relationship_to_classreport\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -61,9 +171,9 @@
       "points": 1
     },
     {
-      "name": "test_grade_value",
+      "name": "test_empty_subject",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_grade_value\"",
+      "run": "pytest -v  -k \"test_empty_subject\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -71,9 +181,9 @@
       "points": 1
     },
     {
-      "name": "test_grade_average",
+      "name": "test_single_grade_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_grade_average\"",
+      "run": "pytest -v  -k \"test_single_grade_added\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -81,9 +191,9 @@
       "points": 1
     },
     {
-      "name": "test_multi_added_size",
+      "name": "test_multi_grade_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_multi_added_size\"",
+      "run": "pytest -v  -k \"test_multi_grade_added\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -91,9 +201,69 @@
       "points": 1
     },
     {
-      "name": "test_multi_grade_value",
+      "name": "test_max_grades_added",
       "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_multi_grade_value\"",
+      "run": "pytest -v  -k \"test_max_grades_added\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_get_grade_valid",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_get_grade_valid\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_get_grade_invalid",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_get_grade_invalid\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_single_grade",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_single_grade\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_multi_grade",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_multi_grade\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_average_without_grade",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_average_without_grade\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_single_grade_average",
+      "setup": "sudo -H pip3 install -r requirements.txt",
+      "run": "pytest -v  -k \"test_single_grade_average\"",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -104,16 +274,6 @@
       "name": "test_average",
       "setup": "sudo -H pip3 install -r requirements.txt",
       "run": "pytest -v  -k \"test_average\"",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
-      "points": 1
-    },
-    {
-      "name": "test_max_grades",
-      "setup": "sudo -H pip3 install -r requirements.txt",
-      "run": "pytest -v  -k \"test_max_grades\"",
       "input": "",
       "output": "",
       "comparison": "included",
