@@ -45,12 +45,21 @@ class ClassReport:
         """
         return len(self._subjects)
 
-    def set_student(self, student):
+    @property
+    def student(self):
+        """
+        Liefert die Referenz des zugewiesenen Student-Objekts
+        """
+        return self._student
+
+    @student.setter
+    def student(self, student):
         """
         Setzt die Referenz zum Studenten
         :param student: Referenz zu Student
         """
-        self._student = student
+        print(f'Param2setStudent is {student}')
+        #self._student = student
 
     def get_subject(self, index):
         """

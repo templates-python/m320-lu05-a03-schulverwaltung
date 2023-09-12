@@ -4,7 +4,7 @@ from subject import Subject
 from grade import Grade
 
 
-class TestSubject:
+class TestClassReport:
 
     @pytest.fixture
     def report(self):
