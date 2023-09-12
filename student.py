@@ -30,9 +30,7 @@ class Student:
         self._report = class_report
         self._school_class = None  # diese Referenz folgt zeitlich später
         # hier sofort die zweiseitige Beziehung knüpfen.
-
-        print(f'ClassReport Objekt: {class_report}')
-        class_report.student('abc')
+        class_report.student = self
 
     # und hier die oben beschriebenen Methoden gemäss Klassendiagramm einfügen
 

@@ -58,8 +58,7 @@ class ClassReport:
         Setzt die Referenz zum Studenten
         :param student: Referenz zu Student
         """
-        print(f'Param2setStudent is {student}')
-        #self._student = student
+        self._student = student
 
     def get_subject(self, index):
         """
