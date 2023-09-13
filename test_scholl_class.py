@@ -25,7 +25,7 @@ class TestSchoolClass:
     def test_single_student_added(self, a_class, a_report):
         max = Student("Max", a_report)
         a_class.add_student(max)
-        assert a_class.get_student(0) is max
+        assert a_class.take_student(0) is max
 
     def test_multi_student_added(self, a_class, a_report):
         for idx in range(4):

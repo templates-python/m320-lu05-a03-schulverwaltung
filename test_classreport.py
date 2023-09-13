@@ -51,12 +51,11 @@ class TestClassReport:
     """
     def test_get_subject_valid(self, report, subject):
         report.add_subject(subject)
-        assert report.get_subject(0) is subject
+        assert report.take_subject(0) is subject
 
     """
     Test bei Zugriff mit ungültigem Index
     """
     def test_get_subject_invalid(self, report, subject):
         report.add_subject(subject)
-        assert report.get_subject(4) == None
-
+        assert report.take_subject(4) == None
