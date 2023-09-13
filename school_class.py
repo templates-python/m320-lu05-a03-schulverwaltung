@@ -42,7 +42,7 @@ class SchoolClass:
         return self._designation
 
 
-    def get_student(self, index):
+    def take_student(self, index):
         """
         Liefert das durch index markierte Element aus der Liste.
         :param index: Element-Nummer in der Liste

@@ -55,7 +55,7 @@ class Subject:
         """
         return len(self._grades)
 
-    def get_value(self, index):
+    def take_value(self, index):
         """
         Liefert den Notenwert des i-ten Objekts.
         :param index: Index der Liste
@@ -67,7 +67,7 @@ class Subject:
         else:
             return 0  # Fehlercode (auch hier wird in einer Applikation dann eine Exception erzeugt)
 
-    def get_date(self, index):
+    def take_date(self, index):
         """
         Liefert das Datum des i-ten Objekts.
         :param index: Indes der Liste
@@ -77,7 +77,9 @@ class Subject:
             grade = self._grades[index]
             return grade.date
 
-    def get_average(self):
+
+    @property
+    def average(self):
         """
         Liefert den Notenschnitt des Fachs
         Gemäss Klassendiagramm müssen 2..4 Notenwerte vorliegen. Hier müsste daher eine
@@ -90,7 +92,7 @@ class Subject:
         else:
             sum = 0.0
             for number in range(self.size):
-                sum += self.get_value(number)
+                sum += self.take_value(number)
             return sum / self.size
 
 
@@ -100,7 +102,7 @@ if __name__ == '__main__':
     sub.add_grade(Grade(4.0, '1.1.11'))
     sub.add_grade(Grade(5.0, '2.2.22'))
     sub.add_grade(Grade(5.0, '3.3.33'))
-    print(f'{sub.name} {sub.get_average()} - Mittelwert aus {sub.size} Werten')
+    print(f'{sub.name} {sub.average} - Mittelwert aus {sub.size} Werten')
     sub.add_grade(Grade(6.0, '4.4.44'))
     sub.add_grade(Grade(5.5, '5.5.55'))
-    print(f'{sub.name} {sub.get_average()} - Mittelwert aus {sub.size} Werten')
+    print(f'{sub.name} {sub.average} - Mittelwert aus {sub.size} Werten')

@@ -60,7 +60,7 @@ class ClassReport:
         """
         self._student = student
 
-    def get_subject(self, index):
+    def take_subject(self, index):
         """
         Liefert das durch index markierte Fach
         :param index: Nummer des Fachs
@@ -87,14 +87,14 @@ class ClassReport:
         - und dem jeweiligen Notenschnitt
         :return: Notenblatt als Stringrepräsentation
         """
-        view = "Zeugnis für: "
+        view = 'Zeugnis für: '
         if self._student is not None:
             # Nur wenn eine Referenz zu einem Studenten-Objekt existiert,
             # kann der Name abgefragt werden.
             view += self._student.name
         # alle Fächer mit dem Notenschnitt auflisten
         for subject in self._subjects:
-            view += "\n\t" + subject.name + ":  " + str(subject.get_average())
+            view += f'\n\t  {subject.name}:  {subject.average}'
         return view
 
     def print_details(self):
@@ -103,35 +103,34 @@ class ClassReport:
         """
         for subject in self._subjects:
             # DEBUG
-            print("\tFach: " + subject.name + " mit " + str(subject.size) + " Noten")
+            print(f'\tFach: {subject.name} mit {subject.size} Noten')
             # DEBUG
             for count in range(subject.size):
-                print("\t\t" + str(count + 1) + ": " + str(subject.get_value(count)) + "   " + str(
-                    subject.get_date(count)))
-            print("\tSchnitt: " + str(subject.get_average()) + "\n")
+                print(f'\t\t{count + 1} : {subject.take_value(count)} {subject.take_date(count)}')
+            print(f'\tSchnitt: {subject.average}\n')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # Zeugnis erzeugen...
     report = ClassReport()
     # ...und 3 Fächer zufügen.
-    report.add_subject(Subject("Mathe"))
-    report.add_subject(Subject("Deutsch"))
-    report.add_subject(Subject("Turnen"))
+    report.add_subject(Subject('Mathe'))
+    report.add_subject(Subject('Deutsch'))
+    report.add_subject(Subject('Turnen'))
     #
     # Jedem Fach noch Noten geben
-    report.get_subject(0).add_grade(Grade(4.0, "1.1.11"))
-    report.get_subject(0).add_grade(Grade(4.5, "2.2.22"))
-    report.get_subject(1).add_grade(Grade(4.0, "3.3.33"))
-    report.get_subject(1).add_grade(Grade(6.0, "4.4.44"))
-    report.get_subject(1).add_grade(Grade(5.0, "5.5.55"))
-    report.get_subject(2).add_grade(Grade(4.5, "6.6.66"))
-    report.get_subject(2).add_grade(Grade(5.0, "7.7.77"))
-    report.get_subject(2).add_grade(Grade(5.0, "8.8.88"))
-    report.get_subject(2).add_grade(Grade(5.5, "9.9.99"))
+    report.take_subject(0).add_grade(Grade(4.0, '1.1.11'))
+    report.take_subject(0).add_grade(Grade(4.5, '2.2.22'))
+    report.take_subject(1).add_grade(Grade(4.0, '3.3.33'))
+    report.take_subject(1).add_grade(Grade(6.0, '4.4.44'))
+    report.take_subject(1).add_grade(Grade(5.0, '5.5.55'))
+    report.take_subject(2).add_grade(Grade(4.5, '6.6.66'))
+    report.take_subject(2).add_grade(Grade(5.0, '7.7.77'))
+    report.take_subject(2).add_grade(Grade(5.0, '8.8.88'))
+    report.take_subject(2).add_grade(Grade(5.5, '9.9.99'))
     #
     # Alles im Detail ausgeben
-    print(report.get_subject(0).name)
+    print(report.take_subject(0).name)
     report.print_details()
     #
     print(report.to_string())
