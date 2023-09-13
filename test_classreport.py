@@ -30,7 +30,7 @@ class TestClassReport:
     """
     Test mit 3 Elementen
     """
-    def test_multi_subject_added(selfself, report):
+    def test_multi_subject_added(self, report):
         report.add_subject(Subject('Mathe'))
         report.add_subject(Subject('Deutsch'))
         report.add_subject(Subject('Sport'))
@@ -39,7 +39,7 @@ class TestClassReport:
     """
     Test mit mehr als 3 Elementen
     """
-    def test_max_subjects_added(selfself, report):
+    def test_max_subjects_added(self, report):
         report.add_subject(Subject('Mathe'))
         report.add_subject(Subject('Deutsch'))
         report.add_subject(Subject('Sport'))
