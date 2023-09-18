@@ -109,5 +109,3 @@ class TestSubject:
         subject.add_grade(Grade(4.0, '1.2.55'))
         subject.add_grade(Grade(1.0, '1.2.44'))
         assert subject.average == 3.0
-
-

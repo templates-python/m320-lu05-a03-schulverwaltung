@@ -59,4 +59,3 @@ class TestClassReport:
     def test_get_subject_invalid(self, report, subject):
         report.add_subject(subject)
         assert report.take_subject(4) == None
-

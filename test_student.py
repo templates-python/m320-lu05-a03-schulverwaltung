@@ -32,4 +32,3 @@ class TestStudent:
     """
     def test_relationship_to_classreport(self, mia, class_report):
         assert mia.report.student is mia
-
