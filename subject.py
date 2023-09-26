@@ -10,8 +10,8 @@ class Subject:
     - get_name()       Name des Fachs
     - add_grade(..)    Fügt ein Note-Objekt dem Fach zu (max. 4 Noten)
     - get_size()       Anzahl der gespeicherten Noten-Objekte
-    - get_value(i)     Notenwert der i-ten Note
-    - get_date(i)      Datum der i-ten Note
+    - take_value(i)     Notenwert der i-ten Note
+    - take_date(i)      Datum der i-ten Note
     - get_average()    Mittelwert aus den i Noten
 
     Attribute:
