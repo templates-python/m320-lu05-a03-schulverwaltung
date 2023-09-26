@@ -11,7 +11,7 @@ class ClassReport:
     Als Schnittstelle bietet die Klasse die Methoden
     - set_student(...)           setzt die Referenz auf ein Student-Objekt
     - add_subject(...)           setzt die Referenz auf ein Subject-Objekt
-    - get_subject(i)             liefert das i-te Subject-Objekt
+    - take_subject(i)             liefert das i-te Subject-Objekt
     - to_string()                liefert ein Zeugnis als String-Repräsentation
     - print_details()            git zu einem Fach alle Notenwerte mit Datum und den Schnitt aus
 
